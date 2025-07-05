@@ -1,13 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>目標管理todo</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>目標todoアプリ</h1>
-    <div id="calendar"></div>
-    <script src="script.js"></script>
+    <button id="prev-button">前の月</button>
+    <button id="next-button">次の月</button>
+    <div class="flex">
+      <div id="calendar"></div>
+      <div class="flex2">
+        <div id="goal-area" class="hidden">
+          <h2 id="goal-date"></h2>
+          <p id="goal-text"></p>
+          <button id="edit-goal">編集</button>
+        </div>
+        <div id="modal" class="modal hidden">
+          <div class="modal-content">
+            <span id="close">&times;</span>
+            <h2 id="modal-date"></h2>
+            <textarea
+              id="goal-input"
+              rows="4"
+              placeholder="目標を入力..."
+            ></textarea>
+            <button id="save-goal">保存</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="task-area"></div>
+    <script type="module" src="moveMonth.js"></script>
+    <script type="module" src="calender.js"></script>
+    <script type="module" src="modal.js"></script>
   </body>
 </html>
